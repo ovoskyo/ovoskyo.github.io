@@ -1,10 +1,10 @@
 # Site settings
-title: 琉光的博客
-SEOTitle: 琉光的博客 | ovoskyo Blog
+title: ꧁流光꧂的博客
+SEOTitle: ꧁流光꧂的博客 | ovoskyo Blog
 header-img: img/vanxinghua.jpg
 email: ovooastro@gmail.com
 description: "愿我们的欢歌笑语，嘲讽了时光，愚弄了死亡。"
-keyword: "琉光的博客, 占星, 星盘, 东玄, 西玄, 黄道, 宫位, 星座"
+keyword: "꧁流光꧂的博客, 占星, 星盘, 东玄, 西玄, 黄道, 宫位, 星座"
 url: "http://ovoskyo.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/ovoskyo/ovoskyo.github.io" # you code repository
