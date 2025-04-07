@@ -2,7 +2,7 @@
 title: ꧁流光꧂
 title_0: ꧁流光的博客꧂
 SEOTitle: ꧁流光꧂ #的博客 | ovoskyo Blog
-header-img: img/vanxinghua.jpg
+header-img: img/home-bg.jpg
 email: ovooastro@gmail.com
 description: "愿我们的欢歌笑语，嘲讽了时光，愚弄了死亡。"
 keyword: "꧁流光的博客꧂, 占星, 星盘, 东玄, 西玄, 黄道, 宫位, 星座"
@@ -13,7 +13,7 @@ github_repo: "https://github.com/ovoskyo/ovoskyo.github.io" # you code repositor
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "星空中闪耀着历史的光辉"
-sidebar-avatar: /img/vanxinghua.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/home-bg.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
@@ -25,7 +25,7 @@ github_username:    ovoskyo
 #facebook_username:  ovoskyo
 #jianshu_username:   ovoskyo
 #twitter_username:   ovoskyo
-
+csdn_username: ovoskyo
 
 
 
