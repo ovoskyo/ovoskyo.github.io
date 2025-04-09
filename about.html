@@ -31,6 +31,53 @@ header-img: "img/home-bg.jpg"
     
 </div> 
 
+<table class="sortable" id="acat-aspects" style="width: 100%">
+    <thead>
+      <tr>
+        <th aria-sort="ascending">
+          <button style="color:#565e5d" data-column-index="0">
+            Author
+            <span aria-hidden="true"></span>
+          </button>
+        </th>
+        <th>
+          <button data-column-index="1">
+            Title
+            <span aria-hidden="true"></span>
+          </button>
+        </th>
+        <th>
+          <button data-column-index="2">
+            Date
+            <span aria-hidden="true"></span>
+          </button>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr><!--T-Squares: An Introduction-->
+        <td class="_A">꧁流光꧂</td>
+        <td class="_T">
+          <a href="https://ovoskyo.github.io/2025/03/24/如何面对占星/">
+            如何面对占星——我们该如何理解我们的生命
+          </a>
+        </td>
+        <td class="_D">2025.3</td>
+      </tr>
+      <tr><!-- MASHA ALLAH: What is reception?-->
+        <td class="_A">꧁流光꧂</td>
+        <td class="_T">
+          <a href="https://ovoskyo.github.io/2025/04/03/宫位制/">
+            宫位制——我们需要什么样的宫位制
+          </a>
+        </td>
+        <td class="_D">2025.4</td>
+      </tr>
+
+    </tbody>
+  </table>
+
 <!-- Handle Language Change -->
 <script type="text/javascript">
     // get nodes
@@ -71,6 +118,9 @@ header-img: "img/home-bg.jpg"
     _render();
 </script>
 
+<!-- script for content table-->
+<script src="{{ "/js/sortable-table.js" | prepend: site.baseurl }}"></script>
+
 
 <!-- Gitalk 评论 start  -->
 {% if site.gitalk.enable %}
@@ -104,7 +154,7 @@ header-img: "img/home-bg.jpg"
 <!-- disqus 评论框 end -->
 
 <!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
+<!--script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "{{site.disqus.username}}";
     var disqus_identifier = "{{site.disqus.username}}/{{page.url}}";
@@ -115,7 +165,7 @@ header-img: "img/home-bg.jpg"
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
-</script>
+</script -->
 <!-- disqus 公共JS代码 end -->
 {% endif %}
 
