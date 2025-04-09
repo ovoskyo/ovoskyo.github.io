@@ -19,8 +19,58 @@ header-img: "img/home-bg.jpg"
     </div>
 </header>
 
+<!-- 目录列表 -->
+<table class="sortable" id="acat-aspects" style="width: 100%">
+    <thead>
+      <tr>
+        <th aria-sort="ascending">
+          <button style="color:#565e5d" data-column-index="0">
+            作者
+            <span aria-hidden="true"></span>
+          </button>
+        </th>
+        <th>
+          <button data-column-index="1">
+            标题
+            <span aria-hidden="true"></span>
+          </button>
+        </th>
+        <th>
+          <button data-column-index="2">
+            日期
+            <span aria-hidden="true"></span>
+          </button>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr><!--T-Squares: An Introduction-->
+        <td class="_A">꧁流光꧂</td>
+        <td class="_T">
+          <a href="https://ovoskyo.github.io/2025/03/24/如何面对占星/">
+            如何面对占星——我们该如何理解我们的生命
+          </a>
+        </td>
+        <td class="_D">2025.3</td>
+      </tr>
+      <tr><!-- MASHA ALLAH: What is reception?-->
+        <td class="_A">꧁流光꧂</td>
+        <td class="_T">
+          <a href="https://ovoskyo.github.io/2025/04/03/宫位制/">
+            宫位制——我们需要什么样的宫位制
+          </a>
+        </td>
+        <td class="_D">2025.4</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+
 <!-- Main Content -->
 <div class="container">
+
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <!-- 标签云 -->
@@ -68,3 +118,6 @@ header-img: "img/home-bg.jpg"
 		</div>
 	</div>
 </div>
+
+<!-- script for content table-->
+<script src="{{ "/js/sortable-table.js" | prepend: site.baseurl }}"></script>
