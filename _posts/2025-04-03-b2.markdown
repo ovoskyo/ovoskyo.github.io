@@ -6,7 +6,8 @@ date:       2025-04-03
 author:     ꧁ovoskyo꧂
 header-img: img/home-bg.jpg
 catalog: true
-categories: basics
+categories: astro
+slug: astrobasic02
 tags:
     - 占星
     - 星盘
