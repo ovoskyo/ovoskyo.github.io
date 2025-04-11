@@ -10,7 +10,7 @@ url: "http://ovoskyo.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/ovoskyo/ovoskyo.github.io" # you code repository
 
-permalink: /:categories/:title   #路径调整
+permalink: /:categories/:title/   #路径调整
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
