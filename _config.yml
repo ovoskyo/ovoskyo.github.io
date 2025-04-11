@@ -10,8 +10,6 @@ url: "http://ovoskyo.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/ovoskyo/ovoskyo.github.io" # you code repository
 
-permalink: /:categories/:slug/   #路径调整
-
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "星空中闪耀着历史的光辉"
@@ -21,7 +19,7 @@ sidebar-avatar: /img/home-bg.jpg      # use absolute URL, seeing it's used in bo
 
 # SNS settings
 RSS: false
-weibo_username:     流光_astro
+weibo_username:     7992095444
 #zhihu_username:     ovoskyo
 github_username:    ovoskyo
 #facebook_username:  ovoskyo
@@ -34,6 +32,7 @@ github_username:    ovoskyo
 # Build settings
 # from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
 # permalink: pretty
+permalink: /posts/:categories/:slug/   #路径调整
 paginate: 10
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
