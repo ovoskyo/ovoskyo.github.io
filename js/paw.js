@@ -19,10 +19,10 @@ document.addEventListener('click', function (e) {
     paw.className = 'click-paw';
     paw.style.left = e.pageX + 'px';
     paw.style.top = e.pageY + 'px';*/
-    createPawPrint(e.pageX, e.pageY);});
+    createPawPrint(e.clientX, e.clientY);});   /* PageX/Y 坐标参考系为页面（包括滚动漂移）, ClientX/Y 坐标系为视口（不包含滚动））.*/
 
 //移动端触摸
 document.addEventListener('touchstart', function (e) {
     const touch = e.touches[0]; // 取第一个触点
-    createPawPrint(touch.pageX, touch.pageY);});
+    createPawPrint(touch.clientX, touch.clientY);});
     

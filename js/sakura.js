@@ -17,13 +17,13 @@
    				limitArray[index] = limitTimes;
 			}
 			
-			function Sakura(x, y, s, r, fn) {
+			function Sakura(x, y, s, r, fn,idx) {
 				this.x = x;
 				this.y = y;
 				this.s = s;
 				this.r = r;
 				this.fn = fn;
-				this.idx=idx
+				this.idx=idx;
 			}
 
 			Sakura.prototype.draw = function(cxt) {
@@ -195,7 +195,7 @@
 			}
 
 			img.onload = function() {
-				console.log("图片加载成功"); // 检查这句是否出现在控制台
+				console.log("Sakura 加载成功"); // 检查这句是否出现在控制台
 				startSakura();
 			}
 
