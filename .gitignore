@@ -38,6 +38,7 @@ _site
 # Blog files
 blog_temp/
 img_temp/
+file_temp/
 
 #ignore file itself
 #.gitignore~
