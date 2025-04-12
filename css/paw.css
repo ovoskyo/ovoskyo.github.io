@@ -1,15 +1,19 @@
 .click-paw {
     position: absolute;
-    width: 40px;
-    height: 40px;
+    width: 70px;
+    height: 70px;
     transform: translate(-50%, -50%);
-    animation: paw-fade 0.8s ease-out forwards;
+    animation: paw-fade 1.2s ease-out forwards;
     pointer-events: none;
     z-index: 9999;
 }
 
 @keyframes paw-fade {
     0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    30% {
         opacity: 1;
         transform: translate(-50%, -50%) scale(1);
     }
