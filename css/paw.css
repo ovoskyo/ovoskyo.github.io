@@ -1,5 +1,5 @@
 .click-paw {
-    position: absolute;
+    position: fixed;  /*fixed是固定在某个位置，absolute是会跟随最近的relative*/
     width: 70px;
     height: 70px;
     transform: translate(-50%, -50%);

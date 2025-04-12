@@ -157,7 +157,7 @@
 				staticx = true;
 				canvas.height = window.innerHeight;
 				canvas.width = window.innerWidth;
-				canvas.setAttribute('style', 'position: fixed;left: 0;top: 0;pointer-events: none;');
+				canvas.setAttribute('style', 'position: fixed;left: 0;top: 0;pointer-events: none;z-index:9999');
 				canvas.setAttribute('id', 'canvas_sakura');
 				document.getElementsByTagName('body')[0].appendChild(canvas);
 				cxt = canvas.getContext('2d');
@@ -189,12 +189,13 @@
 			}
 
 			window.onresize = function() {
-				var canvasSnow = document.getElementById('canvas_snow');
-				canvasSnow.width = window.innerWidth;
-				canvasSnow.height = window.innerHeight;
+				var canvasSakura = document.getElementById('canvas_sakura');
+				canvasSakura.width = window.innerWidth;
+				canvasSakura.height = window.innerHeight;
 			}
 
 			img.onload = function() {
+				console.log("图片加载成功"); // 检查这句是否出现在控制台
 				startSakura();
 			}
 

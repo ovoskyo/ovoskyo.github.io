@@ -6,17 +6,17 @@
 <body ontouchstart="">
     <div class="bg-layer"></div>  <!-- 背景层, 位于最下层 z-index=-2 -->
     <div class="background-overlay"></div>  <!-- 白纱层, 位于背景图之外的最下层 z-index=-1 -->
-    <div class="page-wrapper">  <!-- 背景之外的全部内容的容器，建立以确保层级 z-index=1 -->
-    {% include nav.html %}
-        {{ content }}
-    {% include footer.html %}
+    
+    <!-- 背景之上的页面的容器，建立以确保层级 z-index=1 -->
+    <div class="page-wrapper">  
+        {% include nav.html %}
+            {{ content }}
+        {% include footer.html %}    
     </div>
 
-
-<img src="/img/apple-touch-icon.png" width="0" height="0">
-<script src="/js/sakura.js"></script>
-<script src="/js/paw.js"></script>
-
+    <img src="/img/apple-touch-icon.png" width="0" height="0">
+    <script src="/js/paw.js"></script>
+    <script src="/js/sakura.js"></script>
 </body>
 
 </html>

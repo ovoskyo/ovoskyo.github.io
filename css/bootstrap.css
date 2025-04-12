@@ -37,8 +37,8 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;   /*100vw为视口(浏览器窗口)宽度，100vh为视口高度，100%是以父元素为标准判定（这里的父元素是body，略相当于整个html了）*/
+  height: 100%;
   background-color: rgba(255, 255, 255, 0.6); /* 白纱效果 */
   z-index: -1;
   pointer-events: none; 
