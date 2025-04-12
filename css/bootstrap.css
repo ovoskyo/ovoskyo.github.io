@@ -49,6 +49,18 @@ body {
   z-index: 1; /* 所有原始内容全部在遮罩之上 */
 }
 
+/*樱花按钮位置和形态*/
+#sakura-toggle-btn{
+  position:fixed; 
+  bottom:20px; 
+  right:20px; 
+  z-index:998; 
+  background:transparent; 
+  border:none;
+}
+
+
+
 
 article,
 aside,
