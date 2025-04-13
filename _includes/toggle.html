@@ -13,16 +13,16 @@
 </div>
 
 <!-- 目录弹层容器 -->
+<!-- 目录遮罩层（全屏展示） -->
 <div id="site-menu-overlay" class="site-menu-overlay hidden">
-  <div class="site-menu-panel">
-    <button id="close-site-menu" class="close-btn">×</button>
-    <h2>全站目录</h2>
-    <ul class="site-menu-list">
-      <!-- 示例：实际你可以用Jekyll自动生成 -->
-      <li><a href="/posts/basics/">基础文章</a></li>
-      <li><a href="/posts/astrology/">占星笔记</a></li>
-      <li><a href="/posts/drawing/">绘画练习</a></li>
-      <!-- ... -->
-    </ul>
-  </div>
+  <button id="close-site-menu" class="close-btn">×</button>
+
+  <h2 class="menu-title">全站目录</h2>
+
+  <ul class="site-menu-list fullscreen-style">
+    <li><a href="/posts/basics/">基础文章</a></li>
+    <li><a href="/posts/astrology/">占星笔记</a></li>
+    <li><a href="/posts/drawing/">绘画练习</a></li>
+    <!-- 你可以用Jekyll的循环动态生成这些 -->
+  </ul>
 </div>

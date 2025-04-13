@@ -69,68 +69,74 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(255, 255, 255, 0.7);  /* 白色半透明 */
-    backdrop-filter: blur(6px);                  /* 背景模糊 */
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(8px);
     z-index: 9990;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    padding: 60px 20px 40px;
+    overflow-y: auto;
   }
   
-  /* 隐藏类，用于切换显示状态 */
+  /* 隐藏状态 */
   .site-menu-overlay.hidden {
     display: none;
   }
   
-  /* 中间的面板内容 */
-  .site-menu-panel {
-    background: white;
-    padding: 20px 30px;
-    border-radius: 10px;
-    max-height: 80vh;
-    overflow-y: auto;
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
-    position: relative;
+  /* 标题样式 */
+  .menu-title {
+    font-size: 22px;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: 600;
   }
   
-  /* 关闭按钮 */
-  .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 12px;
-    font-size: 24px;
-    border: none;
-    background: none;
-    cursor: pointer;
-    color: #999;
-  }
-  
-  .site-menu-panel h2 {
-    margin-top: 0;
-    font-size: 20px;
-    text-align: center;
-  }
-  
-  .site-menu-list {
+  /* 目录列表样式（全屏风格） */
+  .site-menu-list.fullscreen-style {
     list-style: none;
     padding: 0;
-    margin-top: 15px;
+    margin: 0;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
   }
   
-  .site-menu-list li {
-    margin: 10px 0;
+  /* 单个目录项 */
+  .site-menu-list.fullscreen-style li {
     text-align: center;
   }
   
-  .site-menu-list li a {
-    text-decoration: none;
-    color: #444;
+  .site-menu-list.fullscreen-style li a {
+    font-size: 18px;
     font-weight: 500;
-    transition: color 0.2s;
+    color: #555;
+    text-decoration: none;
+    transition: color 0.2s ease;
   }
   
-  .site-menu-list li a:hover {
-    color: #e5a097;  /* 你喜欢的粉嫩配色 */
+  .site-menu-list.fullscreen-style li a:hover {
+    color: #e5a097;
+  }
+  
+  /* 关闭按钮 × */
+  .close-btn {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    font-size: 26px;
+    font-weight: bold;
+    border: none;
+    background: none;
+    color: #777;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    z-index: 9991;
+  }
+  .close-btn:hover {
+    color: #e5a097;
   }
 
 
