@@ -3,13 +3,25 @@
 /* ========== 通用圆形图标按钮样式 ========== */
 /* 固定按钮容器通用样式 */
 .btn-fixed-wrapper {
-    position: fixed;
+    position: fixed;   /* 固定按钮，不随页面滚动 */
     right: 20px;
     z-index: 995;
   }
-
+/* 樱花按钮：靠底部 20px */
+.sakura-btn-position {
+    bottom: 20px;
+  }
+  
+/* 目录按钮：略高一点，避免重叠 */
+.menu-btn-position {
+  bottom: 80px;
+}
+/* -----------------------------
+   内层按钮（圆形图标按钮）
+   负责包裹图片 + 提示气泡定位
+------------------------------*/
 .circle-icon-btn{
-    position: relative;          /* 固定按钮，不随页面滚动 */
+    position: relative;          
     background: rgba(255, 255, 255, 0.6);
     border: 1px solid #ccc;
     border-radius: 50%;  /* 圆形按钮 */
@@ -62,16 +74,6 @@
     opacity: 1;
 }
 
-/* ========== 樱花按钮专属定位样式 ========== */
-#sakura-toggle-btn {
-    bottom: 20px;
-  }
-  
-/* ========== 全站目录按钮专属定位样式 ========== */
-#site-menu-btn {
-  bottom: 80px;  /* 比樱花按钮高一层 */
-}
-
 /* ---- 小屏设备适配（比如手机） ---- */
 @media (max-width: 768px) {
     .btn-fixed-wrapper{
@@ -85,7 +87,7 @@
         bottom: 15px;     /* 更靠近底部 */
       }
     #site-menu-btn {
-      bottom: 60px;
+        bottom: 60px;
     }
     
   }
