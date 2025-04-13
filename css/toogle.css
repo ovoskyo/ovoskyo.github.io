@@ -12,10 +12,9 @@
 .sakura-btn-position {
     bottom: 20px;
   }
-  
 /* 目录按钮：略高一点，避免重叠 */
 .menu-btn-position {
-  bottom: 80px;
+    bottom: 80px;
 }
 /* -----------------------------
    内层按钮（圆形图标按钮）
@@ -26,12 +25,11 @@
     background: rgba(255, 255, 255, 0.6);
     border: 1px solid #ccc;
     border-radius: 50%;  /* 圆形按钮 */
-    padding: 0;  /* 去掉 padding，让宽高控制整体尺寸 */
     width: 40px;
     height: 40px;
-    z-index:996; 
+    z-index:995; 
     cursor: pointer;   /* 鼠标悬停变为点击手型 */
-    transition: all 0.3s ease;
+    /*transition: all 0.3s ease;*/
     display: flex;            /* 新增：让内部 img 垂直水平居中 */
     align-items: center;
     justify-content: center;
@@ -47,34 +45,6 @@
 .circle-icon-btn:hover {
   background-color: rgba(255, 255, 255, 0.9);
 }
-
-/* ========== 自定义 tooltip 气泡 ========== */
-.circle-icon-btn::after {
-    content: attr(data-tooltip);   /* 读取 data-tooltip 内容 */
-    position: absolute;
-    bottom: 120%;                  /* 气泡显示在按钮正上方 */
-    left: auto;
-    transform: none;
-    background: rgba(91, 91, 91, 0.85);  /* 浅粉 + 半透明 */
-    color: #ffffff;                   /* 黑灰色字体 */
-    font-size: 12px;
-    padding: 6px 10px;
-    border-radius: 8px;
-    white-space: nowrap;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 1010;
-  }
-    
-/* ========== 悬停显示 tooltip（桌面端）========== */
-.circle-icon-btn:hover::after {
-    opacity: 1;
-}
-.circle-icon-btn.show-tooltip::after {   /* 触摸设备点击后临时加类 */
-    opacity: 1;
-}
-
 /* ---- 小屏设备适配（比如手机） ---- */
 @media (max-width: 768px) {
     .btn-fixed-wrapper {
@@ -91,3 +61,32 @@
       bottom: 60px;
     }
 }
+
+/*
+/* ========== 自定义 tooltip 气泡 ========== 
+.circle-icon-btn::after {
+    content: attr(data-tooltip);   /* 读取 data-tooltip 内容 
+    position: absolute;
+    bottom: 120%;                  /* 气泡显示在按钮正上方 
+    left: auto;
+    transform: none;
+    background: rgba(91, 91, 91, 0.85);  /* 浅粉 + 半透明 
+    color: #ffffff;                   /* 黑灰色字体 
+    font-size: 12px;
+    padding: 3px 6px;
+    border-radius: 8px;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1010;
+  }
+    
+/* ========== 悬停显示 tooltip（桌面端）========== 
+.circle-icon-btn:hover::after {
+    opacity: 1;
+}
+.circle-icon-btn.show-tooltip::after {   /* 触摸设备点击后临时加类 
+    opacity: 1;
+}
+*/
