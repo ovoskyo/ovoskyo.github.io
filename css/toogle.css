@@ -25,6 +25,20 @@
    内层按钮样式：圆形、图标垂直居中
    .circle-icon-btn：通用圆形按钮样式
 ----------------------------------------- */
+button.circle-icon-btn {
+    all: unset; /* 清除所有浏览器默认样式 */
+    box-sizing: border-box; /* 修正 padding 导致的压缩 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+
 .circle-icon-btn {
   position: relative;                       /* 为 tooltip 提示框定位做准备 */
   background: rgba(255, 255, 255, 0.6);     /* 半透明白背景 */
@@ -63,6 +77,10 @@
   .circle-icon-btn {
     width: 30px;            /* 缩小按钮尺寸 */
     height: 30px;
+  }
+  .circle-icon-btn img {
+    width: 80%;
+    height: 80%;
   }
   .sakura-btn-position {
     bottom: 15px;           /* 靠近底部 */
