@@ -62,6 +62,81 @@
     }
 }
 
+/* 整个遮罩层 */
+.site-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.7);  /* 白色半透明 */
+    backdrop-filter: blur(6px);                  /* 背景模糊 */
+    z-index: 9990;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* 隐藏类，用于切换显示状态 */
+  .site-menu-overlay.hidden {
+    display: none;
+  }
+  
+  /* 中间的面板内容 */
+  .site-menu-panel {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    position: relative;
+  }
+  
+  /* 关闭按钮 */
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    font-size: 24px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #999;
+  }
+  
+  .site-menu-panel h2 {
+    margin-top: 0;
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  .site-menu-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+  }
+  
+  .site-menu-list li {
+    margin: 10px 0;
+    text-align: center;
+  }
+  
+  .site-menu-list li a {
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  
+  .site-menu-list li a:hover {
+    color: #e5a097;  /* 你喜欢的粉嫩配色 */
+  }
+
+
+
+
+
 /*
 /* ========== 自定义 tooltip 气泡 ========== 
 .circle-icon-btn::after {

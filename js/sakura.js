@@ -243,10 +243,34 @@ document.getElementById('sakura-toggle-btn').addEventListener('click', function(
 	  tryStart();
 	}
   });
-		
+
+// 按钮操作
+// 按钮点击切换目录开关
+// 目录按钮
+// 目录按钮开关逻辑
+document.getElementById('site-menu-btn').addEventListener('click', function () {
+	const overlay = document.getElementById('site-menu-overlay');  // 获取目录弹窗
+	const icon = document.getElementById('site-menu-icon');        // 获取目录按钮图标
+	const isHidden = overlay.classList.contains('hidden');
+  
+	if (isHidden) {
+	  overlay.classList.remove('hidden');                          // 显示目录
+	  icon.src = '/img/sitemenupink.svg';                          // 切换为粉色图标
+	} else {
+	  overlay.classList.add('hidden');                             // 隐藏目录
+	  icon.src = '/img/sitemenugray.svg';                          // 切换为灰色图标
+	}
+  });
+  
+  // 关闭按钮也要让图标变回灰色
+  document.getElementById('close-site-menu').addEventListener('click', function () {
+	document.getElementById('site-menu-overlay').classList.add('hidden');
+	document.getElementById('site-menu-icon').src = '/img/sitemenugray.svg';  // 还原图标
+  });
+
 
 // 仅移动端：触摸后短暂显示 tooltip
-if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+/*if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
 	const buttons = document.querySelectorAll('.circle-icon-btn');
 	buttons.forEach(btn => {
 	  btn.addEventListener('touchstart', () => {
@@ -256,4 +280,4 @@ if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
 		}, 1000); // 1 秒后隐藏
 	  });
 	});
-  }
+  }*/
