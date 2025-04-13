@@ -36,7 +36,7 @@
   align-items: center;                     /* 垂直居中 */
   justify-content: center;                 /* 水平居中 */
   cursor: pointer;                         /* 鼠标悬停为手型 */
-  z-index: 995;                            /* 保证浮于大部分内容之上 */
+  z-index: 996;                            /* 保证浮于大部分内容之上 */
 }
 
 /* 图标图片样式 */
