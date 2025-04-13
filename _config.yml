@@ -98,10 +98,14 @@ chrome-tab-theme-color: "#000000"
 service-worker: true
 
 #新增的页面
-collections:
-  pages:
-    output: true
-    permalink: /:path/
+#collections:
+#  pages:
+#    permalink: /:path/
+#  posts:
+#    output: true
+  
+
+
 
 # Friends
 #friends: [
