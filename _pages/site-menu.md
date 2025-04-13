@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 全站目录
-permalink: /site-menu/
+permalink: /sitemenu/
 ---
 
 # 星喵馆导航页
