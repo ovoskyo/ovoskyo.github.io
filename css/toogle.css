@@ -4,12 +4,26 @@
     position: fixed;          /* 固定按钮，不随页面滚动 */
     bottom: 20px;             /* 距离底部 20px */
     right: 20px;              /* 距离右侧 20px */
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    padding: 10px;
     width: 33px;
     height: 33px;
-    z-index:998; 
+    z-index:997; 
+    cursor: pointer;
     background:transparent; 
-    border:none;
-    /*transition: all 0.3s ease;*/
+    transition: all 0.3s ease;
+  }
+
+  #sakura-toggle-btn:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+
+  #sakura-toggle-btn img {
+    width: 90%;
+    height: 90%;
+    pointer-events: none; /* 鼠标点击穿透到按钮，不作用在图片上 */
   }
   
   /* ---- 小屏设备适配（比如手机） ---- */
@@ -32,10 +46,10 @@
     border: 1px solid #ccc;
     border-radius: 50%;
     padding: 10px;
-    width: 48px;
-    height: 48px;
+    width: 33px;
+    height: 33px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-    z-index: 1000;
+    z-index: 997;
     cursor: pointer;
     transition: all 0.3s ease;
   }
