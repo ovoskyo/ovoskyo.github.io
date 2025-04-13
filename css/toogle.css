@@ -55,8 +55,8 @@ button.circle-icon-btn {
 
 /* 图标图片样式 */
 .circle-icon-btn img {
-  width: 85%;                              /* 图标相对于按钮的缩放比例 */
-  height: 85%;
+  width: 50%;                              /* 图标相对于按钮的缩放比例 */
+  height: 50%;
   display: block;                          /* 避免 inline 间隙问题 */
   object-fit: contain;                     /* 保持图片比例不变 */
   pointer-events: none;                    /* 避免点击事件触发在图标上 */
@@ -79,8 +79,8 @@ button.circle-icon-btn {
     height: 30px;
   }
   .circle-icon-btn img {
-    width: 80%;
-    height: 80%;
+    width: 45%;
+    height: 45%;
   }
   .sakura-btn-position {
     bottom: 15px;           /* 靠近底部 */
