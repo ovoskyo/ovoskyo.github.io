@@ -248,26 +248,85 @@ document.getElementById('sakura-toggle-btn').addEventListener('click', function(
 // 按钮点击切换目录开关
 // 目录按钮
 // 目录按钮开关逻辑
+// 目录按钮点击切换目录浮层显示
 document.getElementById('site-menu-btn').addEventListener('click', function () {
-	const overlay = document.getElementById('site-menu-overlay');  // 获取目录弹窗
-	const icon = document.getElementById('site-menu-icon');        // 获取目录按钮图标
+	const overlay = document.getElementById('site-menu-overlay');
+	const icon = document.getElementById('site-menu-icon');
 	const isHidden = overlay.classList.contains('hidden');
   
 	if (isHidden) {
-	  overlay.classList.remove('hidden');                          // 显示目录
-	  icon.src = '/img/sitemenupink.svg';                          // 切换为粉色图标
+	  overlay.classList.remove('hidden');       // 显示浮层
+	  icon.src = '/img/sitemenupink.svg';       // 图标变粉色
+	  loadSiteMenu();                           // 加载内容
 	} else {
-	  overlay.classList.add('hidden');                             // 隐藏目录
-	  icon.src = '/img/sitemenugray.svg';                          // 切换为灰色图标
+	  overlay.classList.add('hidden');          // 隐藏浮层
+	  icon.src = '/img/sitemenugray.svg';       // 图标变灰色
 	}
   });
   
-  // 关闭按钮也要让图标变回灰色
+  // 关闭按钮行为（与点击按钮一致）
   document.getElementById('close-site-menu').addEventListener('click', function () {
 	document.getElementById('site-menu-overlay').classList.add('hidden');
-	document.getElementById('site-menu-icon').src = '/img/sitemenugray.svg';  // 还原图标
+	document.getElementById('site-menu-icon').src = '/img/sitemenugray.svg';
   });
+  
+  // ESC 键关闭浮层
+  document.addEventListener('keydown', function (e) {
+	if (e.key === 'Escape') {
+	  document.getElementById('site-menu-overlay').classList.add('hidden');
+	  document.getElementById('site-menu-icon').src = '/img/sitemenugray.svg';
+	}
+  });
+  
+  // 加载目录页面内容（仅加载一次）
+  let hasLoaded = false;
+  
+  function loadSiteMenu() {
+	if (hasLoaded) return;
+	fetch('/site-menu/index.html')
+	  .then(res => res.text())
+	  .then(html => {
+		const doc = new DOMParser().parseFromString(html, 'text/html');
+		const main = doc.querySelector('main') || doc.body;
+		const content = document.getElementById('site-menu-content');
+		content.innerHTML = main.innerHTML;
+		generateToc(content);
+		hasLoaded = true;
+	  })
+	  .catch(() => {
+		document.getElementById('site-menu-content').innerHTML = '<p style="text-align:center;">目录加载失败</p>';
+	  });
+  }
+  
+  // 自动生成 TOC（右侧目录）
+  function generateToc(container) {
+	const toc = document.getElementById('site-menu-toc');
+	const headers = container.querySelectorAll('h1, h2, h3');
+  
+	toc.innerHTML = '';
+	headers.forEach(header => {
+	  const id = header.id || header.textContent.trim().replace(/\s+/g, '-');
+	  header.id = id;
+  
+	  const link = document.createElement('a');
+	  link.href = `#${id}`;
+	  link.textContent = header.textContent;
+	  link.style.color = '#666';
+	  link.style.display = 'block';
+	  link.style.marginBottom = '10px';
+	  link.style.textDecoration = 'none';
+  
+	  link.addEventListener('mouseover', () => link.style.color = '#e5a097');
+	  link.addEventListener('mouseout', () => link.style.color = '#666');
+  
+	  toc.appendChild(link);
+	});
+  }
 
+
+
+
+  
 
 // 仅移动端：触摸后短暂显示 tooltip
 /*if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
