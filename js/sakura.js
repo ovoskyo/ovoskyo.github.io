@@ -184,10 +184,15 @@ window.onresize = function() {
 	canvasSakura.width = window.innerWidth;
 	canvasSakura.height = window.innerHeight;
 }
-img.onload = function() {
+/*img.onload = function() {
 	console.log("Sakura 加载成功"); // 检查这句是否出现在控制台
 	startSakura();
-}
+}*/
+let sakuraReady = false;
+img.onload = function () {
+  sakuraReady = true;
+};
+
 function stopp() {
 	//if(staticx) {
 	var child = document.getElementById("canvas_sakura");
@@ -206,10 +211,35 @@ document.getElementById('sakura-toggle-btn').addEventListener('click', function(
 	  // 关闭樱花
 	  stopp(); // 停止动画 & 删除 canvas
 	  icon.src = '/img/sakuragray.svg';
+	  localStorage.setItem('sakura-enabled', 'false'); // 记住关闭状态
 	} else {
 	  // 打开樱花
 	  startSakura(); // 开始动画
 	  icon.src = '/img/sakurapink.svg';
+	  localStorage.setItem('sakura-enabled', 'true'); // 记住开启状态
+	}
+  });
+
+  //根据保存状态判定是否开启樱花
+  document.addEventListener('DOMContentLoaded', function () {
+	const icon = document.getElementById('sakura-icon');
+	const savedState = localStorage.getItem('sakura-enabled');
+	if (savedState === 'false') {
+	  // 保持关闭状态
+	  staticx = false;
+	  icon.src = '/img/sakuragray.svg';
+	} else {
+	  // 图片加载完成后再开始动画
+	  const tryStart = () => {
+		if (sakuraReady) {
+		  startSakura();
+		  staticx = true;
+		  icon.src = '/img/sakurapink.svg';
+		} else {
+		  setTimeout(tryStart, 100); // 等一会再试
+		}
+	  };
+	  tryStart();
 	}
   });
 		
