@@ -245,3 +245,15 @@ document.getElementById('sakura-toggle-btn').addEventListener('click', function(
   });
 		
 
+// 仅移动端：触摸后短暂显示 tooltip
+if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+	const buttons = document.querySelectorAll('.circle-icon-btn');
+	buttons.forEach(btn => {
+	  btn.addEventListener('touchstart', () => {
+		btn.classList.add('show-tooltip');
+		setTimeout(() => {
+		  btn.classList.remove('show-tooltip');
+		}, 1000); // 1 秒后隐藏
+	  });
+	});
+  }

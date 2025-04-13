@@ -1,17 +1,22 @@
 /*樱花按钮位置和形态*/
 /* ---- 通用样式（适用于所有设备） ---- */
 /* ========== 通用圆形图标按钮样式 ========== */
+/* 固定按钮容器通用样式 */
+.btn-fixed-wrapper {
+    position: fixed;
+    right: 20px;
+    z-index: 995;
+  }
+
 .circle-icon-btn{
-    position: fixed;          /* 固定按钮，不随页面滚动 */
-    bottom: 20px;             /* 距离底部 20px */
-    right: 20px;              /* 距离右侧 20px */
+    position: relative;          /* 固定按钮，不随页面滚动 */
     background: rgba(255, 255, 255, 0.6);
     border: 1px solid #ccc;
     border-radius: 50%;  /* 圆形按钮 */
     padding: 0;  /* 去掉 padding，让宽高控制整体尺寸 */
     width: 40px;
     height: 40px;
-    z-index:997; 
+    z-index:996; 
     cursor: pointer;   /* 鼠标悬停变为点击手型 */
     transition: all 0.3s ease;
     display: flex;            /* 新增：让内部 img 垂直水平居中 */
@@ -30,30 +35,56 @@
   background-color: rgba(255, 255, 255, 0.9);
 }
 
+/* ========== 自定义 tooltip 气泡 ========== */
+.circle-icon-btn::after {
+    content: attr(data-tooltip);   /* 读取 data-tooltip 内容 */
+    position: absolute;
+    bottom: 120%;                  /* 气泡显示在按钮正上方 */
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 220, 240, 0.8);  /* 浅粉 + 半透明 */
+    color: #444;                   /* 黑灰色字体 */
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 997;
+  }
+    
+/* ========== 悬停显示 tooltip（桌面端）========== */
+.circle-icon-btn:hover::after {
+    opacity: 1;
+}
+.circle-icon-btn.show-tooltip::after {   /* 触摸设备点击后临时加类 */
+    opacity: 1;
+}
+
 /* ========== 樱花按钮专属定位样式 ========== */
 #sakura-toggle-btn {
-    right: 20px;
     bottom: 20px;
   }
   
 /* ========== 全站目录按钮专属定位样式 ========== */
 #site-menu-btn {
-  right: 20px;
   bottom: 80px;  /* 比樱花按钮高一层 */
 }
 
 /* ---- 小屏设备适配（比如手机） ---- */
 @media (max-width: 768px) {
-    .circle-icon-btn{
+    .btn-fixed-wrapper{
+        right:15px;
+    }
+    .btn-fixed-wrapper{
         width: 30px;      /* 缩小按钮整体尺寸 */
         height: 30px;
     }
     #sakura-toggle-btn {
         bottom: 15px;     /* 更靠近底部 */
-        right: 15px;      /* 更靠右角 */    
       }
     #site-menu-btn {
-      right: 15px;      /* 更靠右角 */
       bottom: 60px;
     }
     
