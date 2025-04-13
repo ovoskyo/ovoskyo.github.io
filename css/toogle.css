@@ -53,10 +53,10 @@
     content: attr(data-tooltip);   /* 读取 data-tooltip 内容 */
     position: absolute;
     bottom: 120%;                  /* 气泡显示在按钮正上方 */
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(255, 220, 240, 0.8);  /* 浅粉 + 半透明 */
-    color: #444;                   /* 黑灰色字体 */
+    left: auto;
+    transform: none;
+    background: rgba(91, 91, 91, 0.85);  /* 浅粉 + 半透明 */
+    color: #ffffff;                   /* 黑灰色字体 */
     font-size: 12px;
     padding: 6px 10px;
     border-radius: 8px;
@@ -64,7 +64,7 @@
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.3s ease;
-    z-index: 997;
+    z-index: 1010;
   }
     
 /* ========== 悬停显示 tooltip（桌面端）========== */
