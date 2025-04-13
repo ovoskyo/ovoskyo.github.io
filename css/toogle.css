@@ -48,9 +48,10 @@
 /* ---- 小屏设备适配（比如手机） ---- */
 @media (max-width: 768px) {
     .btn-fixed-wrapper {
-      right: 10px;
+      right: 15px;
     }
     .circle-icon-btn {
+      border-radius: 50%;
       width: 30px;
       height: 30px;
     }

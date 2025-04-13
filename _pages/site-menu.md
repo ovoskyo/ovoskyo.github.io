@@ -15,8 +15,8 @@ permalink: /site-menu/
 
 ### 1. 占星笔记
 
-- [基础星座](/posts/astrology/zodiac)
-- [宫位解析](/posts/astrology/houses)
+- [如何面对占星 我们该如何理解我们的生命](/posts/astro/astrobasic01/)
+- [宫位制 我们需要什么样的宫位制](/posts/astro/astrobasic02/)
 - [行星关系](/posts/astrology/planets)
 
 ### 2. 语言学习
