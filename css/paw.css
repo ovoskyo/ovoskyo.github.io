@@ -1,0 +1,41 @@
+/* z999 _点击后生成的猫爪效果（用于 PC 或手机短触） */
+.click-paw {
+  position: fixed;    /*fixed是固定在某个位置，absolute是会跟随最近的relative*/
+  width: 70px;
+  height: 70px;
+  transform: translate(-50%, -50%); /* 让猫爪图像以中心为定位点，而不是左上角 */
+  animation: paw-fade 1.2s ease-out forwards; /* 使用定义好的淡出动画，持续 1.2 秒 */
+  pointer-events: none;            /* 不阻挡鼠标事件（避免鼠标点不到下方元素） */
+  z-index: 999;                    /* 确保猫爪出现在页面最上层 */
+  filter: hue-rotate(0deg); /* 可用于随机色彩变换 */
+}
+
+/* 渐隐动画关键帧（先停顿后慢慢变透明） */
+@keyframes paw-fade {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    30% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* 跟随手指滑动的猫爪（实时位置更新）
+.paw-follow {
+    position: fixed;
+    width: 70px;
+    height: 70px;
+    transform: translate(-50%, -50%);               /* 仍然用中心为基准点 
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0.8;                                   /* 稍微透明一些以柔化存在感 
+    transition: left 0.05s linear, top 0.05s linear; /* 每次坐标更新都平滑过渡，而不是跳动 
+  }
+
+  */
