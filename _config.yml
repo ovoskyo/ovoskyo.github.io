@@ -19,9 +19,9 @@ sidebar-avatar: /img/home-bg.jpg      # use absolute URL, seeing it's used in bo
 
 # SNS settings
 RSS: false
-#weibo_username:     7992095444
+weibo_username:     7992095444
 #zhihu_username:     ovoskyo
-github_username:    ovoskyo
+#github_username:    ovoskyo
 #facebook_username:  ovoskyo
 #jianshu_username:   ovoskyo
 #twitter_username:   ovoskyo
